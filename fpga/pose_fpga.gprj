@@ -1,0 +1,46 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW5AT-60B" pn="GW5AT-LV60PG484AC1/I0">gw5at60b-002</Device>
+    <FileList>
+        <File path="src/top/acg720_top.v" type="file.verilog" enable="1"/>
+        <File path="src/camera/camera_init.v" type="file.verilog" enable="1"/>
+        <File path="src/camera/DVP_Capture.v" type="file.verilog" enable="1"/>
+        <File path="src/camera/dvp_packer.v" type="file.verilog" enable="1"/>
+        <File path="src/isp/med9.v" type="file.verilog" enable="1"/>
+        <File path="src/isp/isp_core.v" type="file.verilog" enable="1"/>
+        <File path="src/display/video_timing.v" type="file.verilog" enable="1"/>
+        <File path="src/display/tft_preview.v" type="file.verilog" enable="1"/>
+        <File path="src/pll/camera_pll.v" type="file.verilog" enable="1"/>
+        <File path="src/pll/camera_pll_mod.v" type="file.verilog" enable="1"/>
+        <File path="src/camera/ov5640_init_table_jpeg.v" type="file.verilog" enable="1"/>
+        <File path="src/camera/ov5640_init_table_rgb.v" type="file.verilog" enable="1"/>
+        <File path="src/camera/ov7725_init_table_rgb.v" type="file.verilog" enable="1"/>
+        <File path="src/camera/i2c_control/i2c_bit_shift.v" type="file.verilog" enable="1"/>
+        <File path="src/camera/i2c_control/i2c_control.v" type="file.verilog" enable="1"/>
+        <File path="src/eth/crc32_d8.v" type="file.verilog" enable="1"/>
+        <File path="src/eth/eth_tx_ctrl.v" type="file.verilog" enable="1"/>
+        <File path="src/eth/eth_tx_fifo.v" type="file.verilog" enable="1"/>
+        <File path="src/eth/eth_udp_tx_gmii.v" type="file.verilog" enable="1"/>
+        <File path="src/eth/eth_udp_rx_gmii.v" type="file.verilog" enable="1"/>
+        <File path="src/eth/rgmii_to_gmii.v" type="file.verilog" enable="1"/>
+        <File path="src/eth/sk01_rx.v" type="file.verilog" enable="1"/>
+        <File path="src/hdmi/dvi_encoder.v" type="file.verilog" enable="1"/>
+        <File path="src/hdmi/gowin_ddr.v" type="file.verilog" enable="1"/>
+        <File path="src/hdmi/hdmi_scanout.v" type="file.verilog" enable="1"/>
+        <File path="src/debug/uart_tx.v" type="file.verilog" enable="1"/>
+        <File path="src/debug/dbg_stream.v" type="file.verilog" enable="1"/>
+        <File path="src/eth/gmii_to_rgmii.v" type="file.verilog" enable="1"/>
+        <File path="src/eth/ip_checksum.v" type="file.verilog" enable="1"/>
+        <File path="src/eth/mdio_bit_shift.v" type="file.verilog" enable="1"/>
+        <File path="src/eth/phy_reg_config.v" type="file.verilog" enable="1"/>
+        <File path="src/pll/gowin_pll.v" type="file.verilog" enable="1"/>
+        <File path="src/pll/gowin_pll_mod.v" type="file.verilog" enable="1"/>
+        <File path="src/pll/pll_init.v" type="file.verilog" enable="1"/>
+        <File path="src/pll/pll_mDRP_intf.v" type="file.verilog" enable="1"/>
+        <File path="constraints/main_camera_eth.cst" type="file.cst" enable="1"/>
+        <File path="constraints/pose_fpga.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>

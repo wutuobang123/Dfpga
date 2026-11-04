@@ -1,0 +1,17 @@
+[Unit]
+Description=TiCao web dashboard (port 8080)
+After=network.target ticao-pipeline.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/kickpi/projects/ticao
+Environment=HOME=/home/kickpi
+Environment=PYTHONPATH=/home/kickpi/.local/lib/python3.8/site-packages
+ExecStart=/usr/bin/python3 web_app.py --db ticao.db --live live.json --port 8080
+Restart=always
+RestartSec=3
+StandardOutput=append:/tmp/webapp.log
+StandardError=append:/tmp/webapp.log
+
+[Install]
+WantedBy=multi-user.target

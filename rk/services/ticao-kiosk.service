@@ -1,0 +1,17 @@
+[Unit]
+Description=TiCao native Qt dashboard (fullscreen on HDMI)
+After=graphical.target ticao-web.service
+Wants=ticao-web.service
+
+[Service]
+User=kickpi
+Environment=DISPLAY=:0
+Environment=HOME=/home/kickpi
+ExecStart=/usr/local/bin/ticao-ui.sh
+Restart=always
+RestartSec=5
+StandardOutput=append:/tmp/qt-ui.log
+StandardError=append:/tmp/qt-ui.log
+
+[Install]
+WantedBy=graphical.target

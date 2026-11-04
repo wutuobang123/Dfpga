@@ -1,0 +1,19 @@
+[Unit]
+Description=TiCao pose pipeline (FPGA UDP -> NPU -> OSD)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/kickpi/projects/ticao
+Environment=HOME=/home/kickpi
+Environment=PYTHONPATH=/home/kickpi/.local/lib/python3.8/site-packages
+# 启动前自检网络：确保 eth0 有 192.168.1.20，否则流水线收不到图像
+ExecStartPre=/usr/local/bin/ticao-netcheck.sh
+ExecStart=/usr/bin/python3 web_stream2.py --source udp://0.0.0.0:8080 --http-port 8099 --model yolov8n-pose-320.rknn --imgsz 320 --infer-impl split --profile protocol --degrade none --target 15 --send-fpga --fpga-host 192.168.1.10 --fpga-port 8081 --ovl-fps 30 --voice --db ticao.db --live live.json
+Restart=always
+RestartSec=3
+StandardOutput=append:/tmp/pipeline.log
+StandardError=append:/tmp/pipeline.log
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=TiCao network watchdog (eth0 IP + FPGA ARP)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/ticao-netwd.sh
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
